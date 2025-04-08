@@ -400,6 +400,18 @@ wheels = [
 ]
 
 [[package]]
+name = "griffe"
+version = "1.7.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "colorama" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/59/08/7df7e90e34d08ad890bd71d7ba19451052f88dc3d2c483d228d1331a4736/griffe-1.7.2.tar.gz", hash = "sha256:98d396d803fab3b680c2608f300872fd57019ed82f0672f5b5323a9ad18c540c", size = 394919 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b1/5e/38b408f41064c9fcdbb0ea27c1bd13a1c8657c4846e04dab9f5ea770602c/griffe-1.7.2-py3-none-any.whl", hash = "sha256:1ed9c2e338a75741fc82083fe5a1bc89cb6142efe126194cc313e34ee6af5423", size = 129187 },
+]
+
+[[package]]
 name = "grpcio"
 version = "1.71.0"
 source = { registry = "https://pypi.org/simple" }
@@ -442,10 +454,16 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "chainlit" },
+    { name = "openai-agents" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "chainlit", specifier = ">=2.4.400" }]
+requires-dist = [
+    { name = "chainlit", specifier = ">=2.4.400" },
+    { name = "openai-agents", specifier = ">=0.0.9" },
+    { name = "python-dotenv", specifier = ">=1.1.0" },
+]
 
 [[package]]
 name = "httpcore"
@@ -749,6 +767,43 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/83/f8/51569ac65d696c8ecbee95938f89d4abf00f47d58d48f6fbabfe8f0baefe/nest_asyncio-1.6.0.tar.gz", hash = "sha256:6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe", size = 7418 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl", hash = "sha256:87af6efd6b5e897c81050477ef65c62e2b2f35d51703cae01aff2905b1852e1c", size = 5195 },
+]
+
+[[package]]
+name = "openai"
+version = "1.71.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "httpx" },
+    { name = "jiter" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "tqdm" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d9/19/b8f0347090a649dce55a008ec54ac6abb50553a06508cdb5e7abb2813e99/openai-1.71.0.tar.gz", hash = "sha256:52b20bb990a1780f9b0b8ccebac93416343ebd3e4e714e3eff730336833ca207", size = 409926 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/f7/049e85faf6a000890e5ca0edca8e9183f8a43c9e7bba869cad871da0caba/openai-1.71.0-py3-none-any.whl", hash = "sha256:e1c643738f1fff1af52bce6ef06a7716c95d089281e7011777179614f32937aa", size = 598975 },
+]
+
+[[package]]
+name = "openai-agents"
+version = "0.0.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "griffe" },
+    { name = "mcp" },
+    { name = "openai" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "types-requests" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e3/ec/dc701417f2b58f66e938abb3acd11de39454ac5d3fe3164a05dd9bc0ce92/openai_agents-0.0.9.tar.gz", hash = "sha256:e6923395ae9afd463e6e0c25cbf2b2d42f8fbe5ad79e244aa9c362b62f335981", size = 985467 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cb/ff/2b378aeb531b1937fe6f98cbdb934155ee185be15455c065dc949ed3e6c1/openai_agents-0.0.9-py3-none-any.whl", hash = "sha256:f4a4798d876db2f47e0cd86791bcdbfc24a37fd20504accde267b682b75d5af7", size = 107300 },
 ]
 
 [[package]]
@@ -1887,6 +1942,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/b9/74/487aa6e25bc5e7a8873da7c4dffed12cf706b61ad27b85ae4d23befe87a3/traceloop_sdk-0.39.0.tar.gz", hash = "sha256:c49368f031f5ec96aacedd0ffdb0e27996d723c4d9de6c65576b76beb7a25a91", size = 21725 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c1/36/8d25d4ef30d7c9b11c24ffe96a7ccc7f538a11af14fad8ffe24280e1f324/traceloop_sdk-0.39.0-py3-none-any.whl", hash = "sha256:2b396b80b4b4c921b0b6ee533353b0846e5ced8d0afaa33aeae53194f8d9f308", size = 30948 },
+]
+
+[[package]]
+name = "types-requests"
+version = "2.32.0.20250328"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/00/7d/eb174f74e3f5634eaacb38031bbe467dfe2e545bc255e5c90096ec46bc46/types_requests-2.32.0.20250328.tar.gz", hash = "sha256:c9e67228ea103bd811c96984fac36ed2ae8da87a36a633964a21f199d60baf32", size = 22995 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cc/15/3700282a9d4ea3b37044264d3e4d1b1f0095a4ebf860a99914fd544e3be3/types_requests-2.32.0.20250328-py3-none-any.whl", hash = "sha256:72ff80f84b15eb3aa7a8e2625fffb6a93f2ad5a0c20215fc1dcfa61117bcb2a2", size = 20663 },
 ]
 
 [[package]]

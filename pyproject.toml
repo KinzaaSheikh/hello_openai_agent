@@ -9,6 +9,8 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "chainlit>=2.4.400",
+    "openai-agents>=0.0.9",
+    "python-dotenv>=1.1.0",
 ]
 
 [project.scripts]
